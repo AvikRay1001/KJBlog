@@ -82,7 +82,7 @@ const PostDetails = () => {
 	const postComment = async (e) => {
 		e.preventDefault();
 		try {
-			const token = getCookie("token");
+			const token = localStorage.getItem("token");
 			const res = await axios.post(
 				"https://kjblog-production.up.railway.app/api/comments/create",
 				{
