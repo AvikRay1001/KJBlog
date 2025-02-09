@@ -38,6 +38,7 @@ const Login = () => {
 			console.log("res:",res);
 			console.log("Server response:", res.data); // Log the entire response
 			const token = getCookie("token"); // Get the token from the cookie
+			console.log("Token:-",token)
 			localStorage.setItem("token", token); // Store the token in local storage
 			console.log("Token at login: ", token);
 			setUser(res.data);

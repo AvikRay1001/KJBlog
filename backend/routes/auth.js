@@ -43,56 +43,28 @@ router.post("/register", async (req, res) => {
 });
 
 //LOGIN
-// router.post("/login", async (req, res) => {
-// 	try {
-// 		const user = await User.findOne({ username: req.body.username });
-// 		if (!user) {
-// 			return res.status(404).json("User not found!");
-// 		}
-// 		const match = await bcrypt.compare(req.body.password, user.password);
-
-// 		if (!match) {
-// 			return res.status(401).json("Wrong credentials!");
-// 		}
-// 		const token = jwt.sign(
-// 			{ _id: user._id, username: user.username, email: user.email },
-// 			process.env.SECRET,
-// 			{ expiresIn: "3d" }
-// 		);
-// 		const { password, ...info } = user._doc;		
-// 		res.cookie("token", token).status(200).json(info);
-// 	} catch (err) {
-// 		res.status(500).json({ message: "Server error", error: err.toString() });
-// 	}
-// });
-
 router.post("/login", async (req, res) => {
-    try {
-        const user = await User.findOne({ username: req.body.username });
-        if (!user) {
-            return res.status(404).json({ message: "User not found!" });
-        }
+	try {
+		const user = await User.findOne({ username: req.body.username });
+		if (!user) {
+			return res.status(404).json("User not found!");
+		}
+		const match = await bcrypt.compare(req.body.password, user.password);
 
-        const match = await bcrypt.compare(req.body.password, user.password);
-        if (!match) {
-            return res.status(401).json({ message: "Wrong credentials!" });
-        }
-
-        const token = jwt.sign(
-            { _id: user._id, username: user.username, email: user.email },
-            process.env.SECRET,
-            { expiresIn: "3d" }
-        );
-
-        const { password, ...userInfo } = user._doc;
-
-        // Send token in response instead of setting it as a cookie
-        res.status(200).json({ token, user: userInfo });
-    } catch (err) {
-        res.status(500).json({ message: "Server error", error: err.toString() });
-    }
+		if (!match) {
+			return res.status(401).json("Wrong credentials!");
+		}
+		const token = jwt.sign(
+			{ _id: user._id, username: user.username, email: user.email },
+			process.env.SECRET,
+			{ expiresIn: "3d" }
+		);
+		const { password, ...info } = user._doc;		
+		res.cookie("token", token).status(200).json(info);
+	} catch (err) {
+		res.status(500).json({ message: "Server error", error: err.toString() });
+	}
 });
-
 
 //LOGOUT
 router.get("/logout", async (req, res) => {
