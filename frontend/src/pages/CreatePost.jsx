@@ -228,10 +228,6 @@ const CreatePost = () => {
 	const handleCreate = async (e) => {
 		e.preventDefault();
 
-		const token = getCookie("token");
-
-		console.log("Token from localStorage:", token);
-
 
 		const totalWordCount = [
 			title,
@@ -256,6 +252,7 @@ const CreatePost = () => {
 			return;
 		}
 
+		const token = localStorage.getItem("token"); // Retrieve the token from local storage
 
 		const post = {
 			title,
