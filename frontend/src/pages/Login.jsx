@@ -28,8 +28,6 @@ const Login = () => {
 	};
 
 	const handleLogin = async () => {
-		const token = getCookie("token");
-		console.log(token);
 		try {
 			const res = await axios.post(
 				"https://kjblog-production.up.railway.app/api/auth/login",
@@ -38,8 +36,9 @@ const Login = () => {
 			);
 			console.log("res:",res);
 			console.log("Server response:", res.data); // Log the entire response
-			localStorage.setItem("token", res.data.token); // Store the token in local storage
-			console.log("Token at login: ", res.data.token);
+			const token = getCookie("token"); // Get the token from the cookie
+			localStorage.setItem("token", token); // Store the token in local storage
+			console.log("Token at login: ", token);
 			setUser(res.data);
 			setError(false);
 			navigate("/");
