@@ -33,20 +33,10 @@ const PostDetails = () => {
 		}
 	};
 
-	const getCookie = (name) => {
-		const cookies = document.cookie.split("; ");
-		for (const cookie of cookies) {
-			const [cookieName, cookieValue] = cookie.split("=");
-			if (cookieName === name) {
-				return cookieValue;
-			}
-		}
-		return null;
-	};
 
 	const handleDeletePost = async () => {
 		try {
-			const token = getCookie("token");
+			const token = localStorage.getItem("token");
 			const res = await axios.delete(
 				"https://kjblog-production.up.railway.app/api/posts/" + postId,
 				{
