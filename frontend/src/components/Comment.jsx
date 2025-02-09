@@ -9,7 +9,7 @@ const Comment = ({ c, post }) => {
 	const deleteComment = async (id) => {
 		try {
 			await axios.delete(
-				"https://kj-blog.vercel.app//api/comments/" + id,
+				"http://localhost:5000/api/comments/" + id,
 				{
 					withCredentials: true,
 				}
