@@ -26,7 +26,7 @@ const Home = () => {
 		try {
 			const token = localStorage.getItem("token");
 			const res = await axios.get(
-				"http://kj-blog.vercel.app/api/posts/" + search,
+				"https://kjblog-production.up.railway.app/api/posts/" + search,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers
 				}

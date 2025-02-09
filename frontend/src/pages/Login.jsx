@@ -19,7 +19,7 @@ const Login = () => {
 	const handleLogin = async () => {
 		try {
 			const res = await axios.post(
-				"http://kj-blog.vercel.app/api/auth/login",
+				"https://kjblog-production.up.railway.app/api/auth/login",
 				{ username, password }, // send plain text password
 				{ withCredentials: true }
 			);

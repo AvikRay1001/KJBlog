@@ -1,2 +1,2 @@
-export const URL = "http://kj-blog.vercel.app/";
-export const IF = "http://kj-blog.vercel.app/images/";
+export const URL = "https://kjblog-production.up.railway.app/";
+export const IF = "https://kjblog-production.up.railway.app/images/";
