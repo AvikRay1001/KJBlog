@@ -16,16 +16,17 @@ const Login = () => {
 	const [adminPassword, setAdminPassword] = useState("");
 
 
-	const getCookie = (name) => {
+	function getCookie(name) {
 		const cookies = document.cookie.split("; ");
-		for (const cookie of cookies) {
+	
+		for (let cookie of cookies) {
 			const [cookieName, cookieValue] = cookie.split("=");
 			if (cookieName === name) {
-				return cookieValue;
+				return decodeURIComponent(cookieValue);
 			}
 		}
-		return null;
-	};
+		return null; // Return null if cookie not found
+	}
 
 	const handleLogin = async () => {
 		try {
