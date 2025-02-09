@@ -13,7 +13,7 @@ const Menu = () => {
 		try {
 			localStorage.removeItem("token");
 			const res = await axios.get(
-				"https://kjblog-production.up.railway.app/api/auth/logout",
+				"https://kjblog-production.up.railway.app:5000/api/auth/logout",
 				{
 					withCredentials: true,
 				}

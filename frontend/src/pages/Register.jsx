@@ -24,7 +24,7 @@ const Register = () => {
 	const handleRegister = async () => {
 		try {
 			const res = await axios.post(
-				"https://kjblog-production.up.railway.app/api/auth/register",
+				"https://kjblog-production.up.railway.app:5000/api/auth/register",
 				{
 					username,
 					email,
