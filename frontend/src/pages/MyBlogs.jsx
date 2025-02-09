@@ -66,7 +66,7 @@ const MyBlogs = () => {
 			</div>
 			<div className="w-screen h-screen bg-black fixed top-0 left-0 z-[-1] opacity-20"></div>
 			<img
-				src="/bg2.jpeg"
+				src="/heroImg2.jpg"
 				alt="background"
 				className="w-screen h-full  fixed top-0 left-0 z-[-2]  opacity-100 "
 			/>

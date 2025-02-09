@@ -71,19 +71,19 @@ const Profile = () => {
 			<div className="pb-16 "></div>
 			<div className="h-screen w-screen bg-black fixed z-[-2]"></div>
 			<img
-				src="/BG.jpeg"
+				src="/pattern.webp"
 				alt=""
 				className="h-screen w-1/2 objec fixed z-[-1] opacity-80"
 			/>
 			<img
-				src="/BG.jpeg"
+				src="/pattern.webp"
 				alt=""
 				className="h-screen w-1/2 fixed z-[-1] right-0 opacity-80"
 			/>
 			<div className="min-h-[80vh] md:mx-28 px-6 pt-8 flex md:flex-row flex-col-reverse md:items-start items-start bg-white">
 				{/* Left */}
 				<div className="flex flex-col md:w-[70%] w-full mt-8 md:mt-0">
-					<h1 className="text-xl font-bold mb-4">Your posts:</h1>
+					<h1 className="text-xl font-bold mb-4 font-jockey text-[20px]">Your posts:</h1>
 					{posts?.map((p) => (
 						<ProfilePosts key={p._id} p={p} />
 					))}
@@ -98,39 +98,39 @@ const Profile = () => {
 								alt=""
 							/>
 						</div>
-						<p className="text-sm border-t-2 border-b-2 py-2 px-2 w-full">
+						<p className="text-sm border-t-2 border-b-2 py-2 px-2 w-full font-jockey text-[20px]">
 							<strong>Username:</strong>{" "}
 							<span className="font-medium">@ {username}</span>
 						</p>
-						<p className="text-sm border-b-2 pb-2 px-2 w-full">
+						<p className="text-sm border-b-2 pb-2 px-2 w-full font-jockey text-[20px]">
 							<strong>Email:</strong> {email}
 						</p>
 						{isTeam ? (
 							<>
-								<p className="text-sm border-b-2 pb-2 px-2 w-full">
+								<p className="text-sm border-b-2 pb-2 px-2 w-full font-jockey text-[20px]">
 									<strong>Name 1:</strong> {name1}
 								</p>
-								<p className="text-sm border-b-2 pb-2 px-2 w-full">
+								<p className="text-sm border-b-2 pb-2 px-2 w-full font-jockey text-[20px]">
 									<strong>Name 2:</strong> {name2}
 								</p>
-								<p className="text-sm border-b-2 pb-2 px-2 w-full">
+								<p className="text-sm border-b-2 pb-2 px-2 w-full font-jockey text-[20px]">
 									<strong>Registration Number 1:</strong> {regno1}
 								</p>
-								<p className="text-sm border-b-2 pb-2 px-2 w-full">
+								<p className="text-sm border-b-2 pb-2 px-2 w-full font-jockey text-[20px]">
 									<strong>Registration Number 2:</strong> {regno2}
 								</p>
 							</>
 						) : (
 							<>
-								<p className="text-sm border-b-2 pb-2 px-2 w-full">
+								<p className="text-sm border-b-2 pb-2 px-2 w-full font-jockey text-[20px]">
 									<strong>Name:</strong> {name}
 								</p>
-								<p className="text-sm border-b-2 pb-2 px-2 w-full">
+								<p className="text-sm border-b-2 pb-2 px-2 w-full font-jockey text-[20px]">
 									<strong>Registration Number:</strong> {regno}
 								</p>
 							</>
 						)}
-						<p className="text-sm pt-2 px-2 w-full">
+						<p className="text-sm pt-2 px-2 w-full font-jockey text-[20px]">
 							<strong>Phone:</strong> {phone}
 						</p>
 					</div>

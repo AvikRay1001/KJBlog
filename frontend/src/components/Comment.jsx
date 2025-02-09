@@ -36,7 +36,7 @@ const Comment = ({ c, post }) => {
 								className="cursor-pointer"
 								onClick={() => deleteComment(c._id)}
 							>
-								<MdDelete />
+								{/* <MdDelete /> */}
 							</p>
 						</div>
 					) : (

@@ -301,12 +301,12 @@ const CreatePost = () => {
 			<div className="pb-16 "></div>
 			<div className="h-screen w-screen bg-black fixed z-[-2]"></div>
 			<img
-				src="/BG.jpeg"
+				src="/pattern.webp"
 				alt=""
 				className="h-screen w-1/2 objec fixed z-[-1] opacity-80"
 			/>
 			<img
-				src="/BG.jpeg"
+				src="/pattern.webp"
 				alt=""
 				className="h-screen w-1/2 fixed z-[-1] right-0 opacity-80"
 			/>
@@ -320,7 +320,7 @@ const CreatePost = () => {
 							Select a Category
 						</legend>
 						<div className="grid grid-cols-3 gap-4 font-poppins">
-							<div
+							{/* <div
 								className={` flex justify-center items-center relative bg-black/40 hover:bg-black/60 rounded-lg h-30  ${
 									selectedCategory === "Historical"
 										? "border-4 border-yellow-500 "
@@ -365,7 +365,7 @@ const CreatePost = () => {
 								>
 									<p className=" text-xl font-semibold">CULTURAL</p>
 								</div>
-							</div>
+							</div> */}
 							<div
 								className={`flex justify-center items-center relative bg-black/40 hover:bg-black/40 rounded-lg h-32  ${
 									selectedCategory === "Open"
