@@ -34,18 +34,30 @@ const Navbar = () => {
 			</div>
 			<div className="">
 				<Link to="/">
-					<h1 className="text-lg md:text-xl font-extrabold font-poppins">
+					{/* <h1 className="text-lg md:text-xl font-extrabold font-poppins">
 						Blogging Blitz
 					</h1>
 					<div className="flex justify-end items-center gap-2 ">
 						<p className="md:text- text-right font-medium text-orange-900">
 							by Kalinga Jyoti
 						</p>
-						{/* <img
+						<img
 							src="/fevicon.jpg"
 							alt="KalingaLogo"
 							className="h-6 w-6  rounded-full"
-						/> */}
+						/>
+					</div> */}
+
+					<div className="flex flex-row">
+						<span className="font-jockey text-[20px]">Blog Blitz</span>
+						<span className="font-jockey pr-2 text-[20px]
+						mt-1">KALINGA</span>
+						<img
+								src="/fevicon.jpg"
+								alt="KalingaLogo"
+								className="h-10 w-10 rounded-full"
+						/>
+						<span className="font-jockey pl-2 text-[20px] mt-1">JYOTI</span>
 					</div>
 				</Link>
 			</div>
@@ -53,8 +65,7 @@ const Navbar = () => {
 				{user ? (
 					<Link to="/write">
 						<div
-							className="flex justify-center items-center gap-1 bg-blue-500 text-white rounded-full px-3 py-1 font-medium hover:shadow-md hover:shadow-blue-500 hover:text-blue-500 hover:bg-white transition duration-300 ease-in-out cursor-pointer
-            "
+							className="flex justify-center items-center gap-1 bg-blue-500 text-white rounded-full px-3 py-1 font-medium hover:shadow-md hover:shadow-blue-500 hover:text-blue-500 hover:bg-white transition duration-300 ease-in-out cursor-pointer"
 						>
 							<FaPencilAlt size={12} />
 							Write

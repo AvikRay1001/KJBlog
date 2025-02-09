@@ -31,11 +31,12 @@ const EditPost = () => {
 		try {
 			const token = localStorage.getItem("token");
 			const res = await axios.get(
-				"https://kjblog-api.up.railway.app/api/posts/" + postId,
+				"http://localhost:5000/api/posts/" + postId,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers
 				}
 			);
+			setTitle(res.data.title);
 			setDesc(res.data.desc);
 			setIntroductionImage(res.data.introductionImage);
 			setBlogImages(res.data.blogImages);
@@ -54,8 +55,21 @@ const EditPost = () => {
 		}
 	};
 
+	const getCookie = (name) => {
+		const cookies = document.cookie.split("; ");
+		for (const cookie of cookies) {
+			const [cookieName, cookieValue] = cookie.split("=");
+			if (cookieName === name) {
+				return cookieValue;
+			}
+		}
+		return null;
+	};
+
 	const handleUpdate = async (e) => {
 		e.preventDefault();
+
+		const token = getCookie("token");
 
 		const totalWordCount = [
 			title,
@@ -98,12 +112,10 @@ const EditPost = () => {
 			subBodyImage,
 		};
 
-		const token = localStorage.getItem("token");
-
 		//post upload
 		try {
 			const res = await axios.put(
-				"https://kjblog-api.up.railway.app/api/posts/" + postId,
+				"http://localhost:5000/api/posts/" + postId,
 				post,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers

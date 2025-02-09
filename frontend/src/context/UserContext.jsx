@@ -16,7 +16,7 @@ export function UserContextProvider({ children }) {
 		try {
 			const token = localStorage.getItem("token"); // Retrieve token from local storage
 			const res = await axios.get(
-				"https://kjblog-api.up.railway.app/api/auth/refetch",
+				"http://localhost:5000/api/auth/refetch",
 				{
 					headers: { Authorization: `Bearer ${token}` },
 				}

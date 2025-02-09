@@ -15,13 +15,16 @@ const Login = () => {
 	const [isAdmin, setIsAdmin] = useState(false);
 	const [adminPassword, setAdminPassword] = useState("");
 
+
 	const handleLogin = async () => {
 		try {
 			const res = await axios.post(
-				"https://kjblog-api.up.railway.app/api/auth/login",
+				"http://localhost:5000/api/auth/login",
 				{ username, password }, // send plain text password
 				{ withCredentials: true }
 			);
+			console.log("res:",res);
+			console.log("Server response:", res.data); // Log the entire response
 			localStorage.setItem("token", res.data.token); // Store the token in local storage
 			console.log("Token at login: ", res.data.token);
 			setUser(res.data);
@@ -45,7 +48,7 @@ const Login = () => {
 
 	return (
 		<>
-			{!isAdmin ? (
+			{isAdmin ? (
 				<div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
 					<p className="text-lg text-center text-gray-700 mb-2">
 						You are not allowed to access this page

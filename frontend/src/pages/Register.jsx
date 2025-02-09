@@ -18,14 +18,13 @@ const Register = () => {
 	const [regno2, setRegno2] = useState("");
 	const [error, setError] = useState(false);
 	const navigate = useNavigate();
-
 	const [isAdmin, setIsAdmin] = useState(false);
 	const [adminPassword, setAdminPassword] = useState("");
 
 	const handleRegister = async () => {
 		try {
 			const res = await axios.post(
-				"https://kjblog-api.up.railway.app/api/auth/register",
+				"http://localhost:5000/api/auth/register",
 				{
 					username,
 					email,

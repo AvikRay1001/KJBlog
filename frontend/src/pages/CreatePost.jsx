@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
+import { supabase } from "../components/supabaseClient";
 import axios from "axios";
 import { Navigate, useNavigate, Link } from "react-router-dom";
 import { storage } from "../components/firebase";
@@ -30,7 +31,7 @@ const CreatePost = () => {
 		const fetchUserPosts = async () => {
 			try {
 				const res = await axios.get(
-					"https://kjblog-api.up.railway.app/api/posts/user/" + user._id
+					"http://localhost:5000/api/posts/user/" + user._id
 				);
 				if (res.data.length > 0) {
 					setHasPosted(true);
@@ -49,47 +50,132 @@ const CreatePost = () => {
 	}
 
 	// Uploading image and url generration function into firebase
-	const uploadImage = (img) => {
-		return toast.promise(
-			new Promise((resolve, reject) => {
-				if (img == null) {
-					reject("No image provided");
-					return;
-				}
+	// const uploadImage = () => {
+	// 	const [file, setfile] = useState(null);
+	// 	const [uploading, setuploading] = useState(false);
+	// 	const [fileURL, setfileURL] = useState("");
 
-				const uploadTask = storage.ref(`images/${img.name}`).put(img);
-				uploadTask.on(
-					"state_changed",
-					(snapshot) => {},
-					(error) => {
-						reject(error.message);
-					},
-					() => {
-						uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-							resolve(downloadURL);
-						});
-					}
-				);
-			}),
-			{
-				loading: "Uploading image...",
-				success: "Image uploaded successfully",
-				error: "Error uploading image",
+	// 	const handleFileChange = event => {
+	// 		setfile(event.target.files[0]);
+	// 	}
+
+	// 	const handleUpload = async() => {
+	// 		try{
+	// 			setuploading(true);
+
+	// 			if(!title){
+	// 				toast.error("Please choose a file to upload");
+	// 				return;
+	// 			}
+
+	// 			const fileExt = file.name.split(".").pop();
+	// 			const fileName = `${Math.random()}.${fileExt}`;
+	// 			const filePath = `${fileName}`
+
+	// 			let{data,error} = await supabase.storage
+	// 				.from("blog-pics")
+	// 				.getPublicUrl(filePath)
+
+	// 			console.log(url.publicUrl);
+
+	// 			setfileURL(url.publicUrl);
+	// 			toast.success("File uploaded succesfully");
+	// 		} catch(error) {
+	// 			toast.error("Error uploading file:", error.message);
+	// 		} finally {
+	// 			setuploading(false);
+	// 		}
+	// 	}
+	// 	// return toast.promise(
+	// 	// 	new Promise((resolve, reject) => {
+	// 	// 		if (img == null) {
+	// 	// 			reject("No image provided");
+	// 	// 			return;
+	// 	// 		}
+
+	// 	// 		const uploadTask = storage.ref(`images/${img.name}`).put(img);
+	// 	// 		uploadTask.on(
+	// 	// 			"state_changed",
+	// 	// 			(snapshot) => {},
+	// 	// 			(error) => {
+	// 	// 				reject(error.message);
+	// 	// 			},
+	// 	// 			() => {
+	// 	// 				uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+	// 	// 					resolve(downloadURL);
+	// 	// 				});
+	// 	// 			}
+	// 	// 		);
+	// 	// 	}),
+	// 	// 	{
+	// 	// 		loading: "Uploading image...",
+	// 	// 		success: "Image uploaded successfully",
+	// 	// 		error: "Error uploading image",
+	// 	// 	}
+	// 	// );
+	// };
+
+
+	const uploadImage = async (file) => {
+		if (!file) {
+			toast.error("Please choose a file to upload");
+			return;
+		}
+	
+		try {
+			const fileExt = file.name.split(".").pop();
+			const fileName = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}.${fileExt}`;
+			const filePath = `blog-pics/${fileName}`;
+	
+			const { data, error } = await supabase.storage
+				.from("blog-pics")
+				.upload(filePath, file);
+	
+			if (error) {
+				throw error;
 			}
-		);
+	
+			const { data: urlData } = supabase.storage
+				.from("blog-pics")
+				.getPublicUrl(filePath);
+	
+			return urlData.publicUrl;
+		} catch (error) {
+			toast.error(`Error uploading file: ${error.message}`);
+			return null;
+		}
 	};
-
-	// Function to handle introduction image change
+	
 	const handleIntroductionImageChange = async (e) => {
 		const file = e.target.files[0];
+		if (!file) {
+			toast.error("No file selected");
+			return;
+		}
+	
 		try {
 			const url = await uploadImage(file);
-			setIntroductionImage(url);
-			toast.success("Introduction image uploaded successfully");
+			if (url) {
+				setIntroductionImage(url);
+				toast.success("Introduction image uploaded successfully");
+			}
 		} catch (error) {
 			toast.error("Error uploading introduction image");
 		}
 	};
+	
+
+	// // Function to handle introduction image change
+	// const handleIntroductionImageChange = async (e) => {
+	// 	const file = e.target.files[0];
+	// 	try {
+	// 		const url = await uploadImage(file);
+	// 		setIntroductionImage(url);
+	// 		toast.success("Introduction image uploaded successfully");
+	// 	} catch (error) {
+	// 		toast.error("Error uploading introduction image");
+	// 	}
+	// };
 
 	// Function to handle blog image change
 	const handleBlogImageChange = async (e) => {
@@ -127,8 +213,25 @@ const CreatePost = () => {
 		}
 	};
 
+	const getCookie = (name) => {
+		const cookies = document.cookie.split("; ");
+		for (const cookie of cookies) {
+			const [cookieName, cookieValue] = cookie.split("=");
+			if (cookieName === name) {
+				return cookieValue;
+			}
+		}
+		return null;
+	};
+	
+
 	const handleCreate = async (e) => {
 		e.preventDefault();
+
+		const token = getCookie("token");
+
+		console.log("Token from localStorage:", token);
+
 
 		const totalWordCount = [
 			title,
@@ -153,7 +256,6 @@ const CreatePost = () => {
 			return;
 		}
 
-		const token = localStorage.getItem("token"); // Retrieve the token from local storage
 
 		const post = {
 			title,
@@ -173,9 +275,11 @@ const CreatePost = () => {
 			subBodyImage,
 		};
 
+		console.log("Token from:", token);
+
 		try {
 			const res = await axios.post(
-				"https://kjblog-api.up.railway.app/api/posts/create",
+				"http://localhost:5000/api/posts/create",
 				post,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers

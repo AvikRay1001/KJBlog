@@ -23,7 +23,7 @@ const PostDetails = () => {
 		try {
 			const token = localStorage.getItem("token");
 			const res = await axios.get(
-				"https://kjblog-api.up.railway.app/api/posts/" + postId
+				"http://localhost:5000/api/posts/" + postId
 			);
 			setPost(res.data);
 			// toast.success("Post fetched successfully");
@@ -33,11 +33,22 @@ const PostDetails = () => {
 		}
 	};
 
+	const getCookie = (name) => {
+		const cookies = document.cookie.split("; ");
+		for (const cookie of cookies) {
+			const [cookieName, cookieValue] = cookie.split("=");
+			if (cookieName === name) {
+				return cookieValue;
+			}
+		}
+		return null;
+	};
+
 	const handleDeletePost = async () => {
 		try {
-			const token = localStorage.getItem("token");
+			const token = getCookie("token");
 			const res = await axios.delete(
-				"https://kjblog-api.up.railway.app/api/posts/" + postId,
+				"http://localhost:5000/api/posts/" + postId,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers
 				}
@@ -60,7 +71,7 @@ const PostDetails = () => {
 		try {
 			const token = localStorage.getItem("token");
 			const res = await axios.get(
-				"https://kjblog-api.up.railway.app/api/comments/post/" + postId,
+				"http://localhost:5000/api/comments/post/" + postId,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers
 				}
@@ -81,9 +92,9 @@ const PostDetails = () => {
 	const postComment = async (e) => {
 		e.preventDefault();
 		try {
-			const token = localStorage.getItem("token");
+			const token = getCookie("token");
 			const res = await axios.post(
-				"https://kjblog-api.up.railway.app/api/comments/create",
+				"http://localhost:5000/api/comments/create",
 				{
 					comment: comment,
 					author: user.username,

@@ -1,22 +1,24 @@
-const jwt=require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
 
-const verifyToken=(req,res,next)=>{
-    const token=req.cookies.token
-    // console.log(token)
-    if(!token){
-        return res.status(401).json("You are not authenticated!")
-    }
-    jwt.verify(token,process.env.SECRET,async (err,data)=>{
-        if(err){
-            return res.status(403).json("Token is not valid!")
-        }
-        
-        req.userId=data._id
-       
-        // console.log("passed")
-        
-        next()
-    })
-}
+const verifyToken = (req, res, next) => {
+	// Get the token from the Authorization header
+	const authHeader = req.headers.authorization;
+	const token = authHeader && authHeader.split(" ")[1]; // Format: "Bearer <token>"
 
-module.exports=verifyToken
+	if (!token) {
+		return res.status(401).json("You are not authenticated!");
+	}
+
+	// Verify the token
+	jwt.verify(token, process.env.SECRET, (err, data) => {
+		if (err) {
+			return res.status(403).json("Token is not valid!");
+		}
+
+		// Attach the user ID to the request object
+		req.userId = data._id;
+		next();
+	});
+};
+
+module.exports = verifyToken;
