@@ -185,14 +185,14 @@ const PostDetails = () => {
 							<>
 								{/* Introduction */}
 								<fieldset className="mt-8 border-2 border-gray-300 p-15 rounded-lg bg-white">
-									<legend className="font-bold text-gray-700 ml-2">
+									<legend className="font-bold text-gray-700 ml-2 font-jockey text-[20px]">
 										Introduction
 									</legend>
 									<p className="px-4 pb-2">{post.introduction}</p>
 								</fieldset>
 								{/* Description */}
 								<fieldset className="mt-8 border-2 border-gray-300 p-15 rounded-lg bg-white">
-									<legend className="font-bold text-gray-700 ml-2">
+									<legend className="font-bold text-gray-700 ml-2 font-jockey text-[20px]">
 										Description
 									</legend>
 									<p className="px-4 pb-2">{post.desc}</p>
@@ -211,7 +211,7 @@ const PostDetails = () => {
 								</div>
 								{/* Body */}
 								<fieldset className="mt-8 border-2 border-gray-300 p-15 rounded-lg bg-white">
-									<legend className="font-bold text-gray-700 ml-2">
+									<legend className="font-bold text-gray-700 ml-2 font-jockey text-[20px]">
 										Blog Body
 									</legend>
 									<p className="px-4 pb-2">{post.body}</p>
@@ -226,33 +226,33 @@ const PostDetails = () => {
 								)}
 								{/* Sub Body */}
 								<fieldset className="mt-8 border-2 border-gray-300 p-15 rounded-lg bg-white">
-									<legend className="font-bold text-gray-700 ml-2">
+									<legend className="font-bold text-gray-700 ml-2 font-jockey text-[20px]">
 										Sub Body
 									</legend>
 									<p className="px-4 pb-2">{post.subBody}</p>
 								</fieldset>
 								{/* Conclusion */}
 								<fieldset className="mt-8 border-2 border-gray-300 p-15 rounded-lg bg-white">
-									<legend className="font-bold text-gray-700 ml-2">
+									<legend className="font-bold text-gray-700 ml-2 font-jockey text-[20px]">
 										Conclusion
 									</legend>
 									<p className="px-4 pb-2">{post.conclusion}</p>
 								</fieldset>
 								{/* FAQs */}
 								<fieldset className="mt-8 border-2 border-gray-300 p-15 rounded-lg bg-white">
-									<legend className="font-bold text-gray-700 ml-2">FAQs</legend>
+									<legend className="font-bold text-gray-700 ml-2 font-jockey text-[20px]">FAQs</legend>
 									<p className="px-4 pb-2">{post.faqs}</p>
 								</fieldset>
 								{/* Writer Details */}
 								<fieldset className="mt-8 border-2 border-gray-300 p-15 rounded-lg bg-white">
-									<legend className="font-bold text-gray-700 ml-2">
+									<legend className="font-bold text-gray-700 ml-2 font-jockey text-[20px]">
 										Writer Details
 									</legend>
 									<p className="px-4 pb-2">{post.writerDetails}</p>
 								</fieldset>
 								{/* Sources */}
 								<fieldset className="mt-8 border-2 border-gray-300 p-15 rounded-lg bg-white">
-									<legend className="font-bold text-gray-700 ml-2">
+									<legend className="font-bold text-gray-700 ml-2 font-jockey text-[20px]">
 										Sources
 									</legend>
 									<p className="px-4 pb-2">{post.sources}</p>
@@ -262,7 +262,7 @@ const PostDetails = () => {
 						{/* Comments */}
 						<fieldset className="mt-8 border-2 border-gray-300 px-2 pb-2 rounded-lg bg-white ">
 							<legend className="font-bold text-gray-700 ml-2">
-								<h3 className="font-semibold">Comments</h3>
+								<h3 className="font-semibold font-jockey text-[20px]">Comments</h3>
 							</legend>
 							{comments?.map((c) => (
 								<Comment key={c._id} c={c} post={post} />
@@ -278,7 +278,7 @@ const PostDetails = () => {
 								/>
 								<button
 									onClick={postComment}
-									className="bg-black text-sm text-white px-2 py-2 md:w-[20%] mt-4 md:mt-0"
+									className="bg-black text-sm text-white px-2 py-2 md:w-[20%] mt-4 md:mt-0 font-jockey text-[20px]"
 								>
 									Add Comment
 								</button>
