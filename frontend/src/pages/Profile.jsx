@@ -27,7 +27,7 @@ const Profile = () => {
 	const fetchUserPosts = async () => {
 		try {
 			const res = await axios.get(
-				"http://localhost:5000/api/posts/user/" + user._id
+				"http://kj-blog.vercel.app/api/posts/user/" + user._id
 			);
 			// console.log(res.data)
 			setPosts(res.data);

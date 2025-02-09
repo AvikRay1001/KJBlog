@@ -31,7 +31,7 @@ const EditPost = () => {
 		try {
 			const token = localStorage.getItem("token");
 			const res = await axios.get(
-				"http://localhost:5000/api/posts/" + postId,
+				"http://kj-blog.vercel.app/api/posts/" + postId,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers
 				}
@@ -115,7 +115,7 @@ const EditPost = () => {
 		//post upload
 		try {
 			const res = await axios.put(
-				"http://localhost:5000/api/posts/" + postId,
+				"http://kj-blog.vercel.app/api/posts/" + postId,
 				post,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers
