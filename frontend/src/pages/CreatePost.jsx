@@ -31,7 +31,7 @@ const CreatePost = () => {
 		const fetchUserPosts = async () => {
 			try {
 				const res = await axios.get(
-					"http://localhost:5000/api/posts/user/" + user._id
+					"https://kj-blog.vercel.app//api/posts/user/" + user._id
 				);
 				if (res.data.length > 0) {
 					setHasPosted(true);
@@ -279,7 +279,7 @@ const CreatePost = () => {
 
 		try {
 			const res = await axios.post(
-				"http://localhost:5000/api/posts/create",
+				"https://kj-blog.vercel.app//api/posts/create",
 				post,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers

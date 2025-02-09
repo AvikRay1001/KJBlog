@@ -23,7 +23,7 @@ const PostDetails = () => {
 		try {
 			const token = localStorage.getItem("token");
 			const res = await axios.get(
-				"http://localhost:5000/api/posts/" + postId
+				"https://kj-blog.vercel.app//api/posts/" + postId
 			);
 			setPost(res.data);
 			// toast.success("Post fetched successfully");
@@ -48,7 +48,7 @@ const PostDetails = () => {
 		try {
 			const token = getCookie("token");
 			const res = await axios.delete(
-				"http://localhost:5000/api/posts/" + postId,
+				"https://kj-blog.vercel.app//api/posts/" + postId,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers
 				}
@@ -71,7 +71,7 @@ const PostDetails = () => {
 		try {
 			const token = localStorage.getItem("token");
 			const res = await axios.get(
-				"http://localhost:5000/api/comments/post/" + postId,
+				"https://kj-blog.vercel.app//api/comments/post/" + postId,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers
 				}
@@ -94,7 +94,7 @@ const PostDetails = () => {
 		try {
 			const token = getCookie("token");
 			const res = await axios.post(
-				"http://localhost:5000/api/comments/create",
+				"https://kj-blog.vercel.app//api/comments/create",
 				{
 					comment: comment,
 					author: user.username,
