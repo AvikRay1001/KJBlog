@@ -21,7 +21,7 @@ const Navbar = () => {
 	const { user } = useContext(UserContext);
 
 	return (
-		<div className="flex items-center justify-between px-8 py-2 bg-white/70 shadow-lg ring-1 ring-black/5 backdrop-blur-xl fixed top-0 w-full z-20">
+		<div className="flex items-center justify-between px-8 py-2 shadow-lg ring-1 ring-black/5 backdrop-blur-md fixed top-0 w-full z-20">
 			<div className="">
 				<a href="https://www.vitvibrance.com/" target="_blank">
 					<img
@@ -48,16 +48,19 @@ const Navbar = () => {
 						/>
 					</div> */}
 
-					<div className="flex flex-row">
-						<span className="font-jockey text-[20px]">Blog Blitz</span>
-						<span className="font-jockey pr-2 text-[20px]
-						mt-1">KALINGA</span>
-						<img
-								src="/fevicon.jpg"
-								alt="KalingaLogo"
-								className="h-10 w-10 rounded-full"
-						/>
-						<span className="font-jockey pl-2 text-[20px] mt-1">JYOTI</span>
+					<div className="flex flex-row gap-10 items-center justify-center">
+						<span className="font-jockey text-[30px]">Blog Blitz</span>
+						<span className="font-poppins">by</span>
+						<div className="flex flex-row">
+							<span className="font-jockey pr-2 text-[20px]
+							mt-1">KALINGA</span>
+							<img
+									src="/fevicon.jpg"
+									alt="KalingaLogo"
+									className="h-10 w-10 rounded-full"
+							/>
+							<span className="font-jockey pl-2 text-[20px] mt-1">JYOTI</span>
+						</div>
 					</div>
 				</Link>
 			</div>
@@ -74,7 +77,7 @@ const Navbar = () => {
 				) : (
 					<h3>
 						<Link to="/login" className="">
-							<button className="flex items-center space-x-1 bg-blue-500 text-white border-blue-500 border-2 rounded-full px-3 py-1 font-medium hover:text-blue-600 hover:bg-white transition duration-300 ease-in-out">
+							<button className="flex items-center space-x-1 bg-blue-500 text-white border-blue-500 border-2 px-3 py-1 font-medium hover:text-blue-600 hover:bg-white transition duration-300 ease-in-out rounded-full">
 								<LuLogIn className="" />
 								<p className="">Login</p>
 							</button>
@@ -92,7 +95,7 @@ const Navbar = () => {
 					// to be removed
 					<h3>
 						<Link to="/register" className="">
-							<button className="flex items-center space-x-1 bg-green-500 text-white border-green-500 border-2 rounded-full px-3 py-1 font-medium hover:text-green-600 hover:bg-white transition duration-300 ease-in-out">
+							<button className="flex items-center space-x-1 bg-green-500 text-white border-green-500 border-2 px-3 py-1 font-medium hover:text-green-600 hover:bg-white transition duration-300 ease-in-out">
 								<LuLogIn className="" />
 								<p className="">Register</p>
 							</button>
