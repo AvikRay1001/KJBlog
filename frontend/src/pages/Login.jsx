@@ -115,26 +115,34 @@ const Login = () => {
 					<div className="flex items-center justify-between px-6 md:px-[200px] py-4">
 						<h1 className="">
 							<Link to="/">
-								<h1 className="text-lg md:text-2xl font-extrabold font-poppins">
-									Blogging Blitz
-								</h1>
-								<p className="text-right font-medium text-orange-900">
-									by Kalinga Jyoti
-								</p>
+								<div className="flex flex-row gap-10 items-center justify-center">
+								<span className="font-jockey text-[30px]">Blog Blitz</span>
+								<span className="font-poppins">by</span>
+								<div className="flex flex-row">
+									<span className="font-jockey pr-2 text-[20px]
+									mt-1">KALINGA</span>
+									<img
+											src="/fevicon.jpg"
+											alt="KalingaLogo"
+											className="h-10 w-10 rounded-full"
+									/>
+									<span className="font-jockey pl-2 text-[20px] mt-1">JYOTI</span>
+								</div>
+						</div>
 							</Link>
 						</h1>
 						<h3>
-							<Link to="/register">Register</Link>
+							<Link to="/register" className="font-jockey text-[20px]">Register</Link>
 						</h3>
 					</div>
 					<div className="w-full flex justify-center items-center h-[80vh] ">
 						<div className="flex flex-col justify-center items-center space-y-4 w-[80%] md:w-[25%]">
-							<h1 className="text-xl font-bold text-left">
+							<h1 className="text-[20px] font-jockey text-left">
 								Log in to your account
 							</h1>
 							<input
 								onChange={(e) => setUsername(e.target.value)}
-								className="w-full px-4 py-2 border-2 border-black outline-0"
+								className="w-full px-4 py-2 border-2 border-black outline-0 font-jockey"
 								type="text"
 								placeholder="Enter your username"
 							/>
@@ -146,17 +154,17 @@ const Login = () => {
 							/>
 							<button
 								onClick={handleLogin}
-								className="w-full px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black "
+								className="w-full px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black font-jockey text-[25px]"
 							>
 								Log in
 							</button>
 							{error && (
-								<h3 className="text-red-500 text-sm ">Something went wrong</h3>
+								<h3 className="text-red-500 text-sm font-jockey">Something went wrong</h3>
 							)}
 							<div className="flex justify-center items-center space-x-3">
-								<p>New here?</p>
+								<p className="font-jockey text-[20px]">New here?</p>
 								<p className="text-gray-500 hover:text-black">
-									<Link to="/register">Register</Link>
+									<Link to="/register" className="font-jockey text-[20px]">Register</Link>
 								</p>
 							</div>
 						</div>

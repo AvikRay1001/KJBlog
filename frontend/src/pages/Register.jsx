@@ -88,27 +88,37 @@ const Register = () => {
 					<div className="flex items-center justify-between px-6 md:px-[200px] py-4">
 						<h1 className="">
 							<Link to="/">
-								<h1 className="text-lg md:text-2xl font-extrabold font-poppins">
-									Blogging Blitz
-								</h1>
-								<p className="text-right font-medium text-orange-900">
-									by Kalinga Jyoti
-								</p>
+								<div className="flex flex-row gap-10 items-center justify-center">
+								<span className="font-jockey text-[30px]">Blog Blitz</span>
+								<span className="font-poppins">by</span>
+								<div className="flex flex-row">
+									<span className="font-jockey pr-2 text-[20px]
+									mt-1">KALINGA</span>
+									<img
+											src="/fevicon.jpg"
+											alt="KalingaLogo"
+											className="h-10 w-10 rounded-full"
+									/>
+									<span className="font-jockey pl-2 text-[20px] mt-1">JYOTI</span>
+								</div>
+								</div>
 							</Link>
 						</h1>
 						<h3>
-							<Link to="/login">Login</Link>
+							<Link to="/login" className="font-jockey text-[20px]">Login</Link>
 						</h3>
 					</div>
+					<br/>
+					<br/>
 					<div className="w-full flex justify-center items-center  ">
 						<div className="flex flex-col justify-center items-center space-y-4 w-[80%] md:w-[25%]">
-							<h1 className="text-xl font-bold text-left">Create an account</h1>
+							<h1 className="text-xl font-bold text-left font-jockey text-[20px]">Create an account</h1>
 							<div className="flex items-center">
 								<input
 									type="checkbox"
 									checked={isTeam}
 									onChange={() => setIsTeam(!isTeam)}
-									className="mr-2"
+									className="mr-2 font-jockey text-[20px]"
 								/>
 								<label>Register as a team</label>
 							</div>
@@ -122,19 +132,19 @@ const Register = () => {
 								<>
 									<input
 										onChange={(e) => setName(e.target.value)}
-										className="w-full px-4 py-2 border-2 border-black outline-0"
+										className="w-full px-4 py-2 border-2 border-black outline-0 font-jockey text-[20px]"
 										type="text"
 										placeholder="Enter your name"
 									/>
 									<input
 										onChange={(e) => setRegno(e.target.value)}
-										className="w-full px-4 py-2 border-2 border-black outline-0"
+										className="w-full px-4 py-2 border-2 border-black outline-0 font-jockey text-[20px]"
 										type="text"
 										placeholder="Enter your regno"
 									/>
 									<input
 										onChange={(e) => setPhone(e.target.value)}
-										className="w-full px-4 py-2 border-2 border-black outline-0"
+										className="w-full px-4 py-2 border-2 border-black outline-0 font-jockey text-[20px]"
 										type="text"
 										placeholder="Enter your phone"
 									/>
@@ -144,31 +154,31 @@ const Register = () => {
 								<>
 									<input
 										onChange={(e) => setName1(e.target.value)}
-										className="w-full px-4 py-2 border-2 border-black outline-0"
+										className="w-full px-4 py-2 border-2 border-black outline-0 font-jockey text-[20px]"
 										type="text"
 										placeholder="Enter team member 1 name"
 									/>
 									<input
 										onChange={(e) => setName2(e.target.value)}
-										className="w-full px-4 py-2 border-2 border-black outline-0"
+										className="w-full px-4 py-2 border-2 border-black outline-0 font-jockey text-[20px]"
 										type="text"
 										placeholder="Enter team member 2 name"
 									/>
 									<input
 										onChange={(e) => setRegno1(e.target.value)}
-										className="w-full px-4 py-2 border-2 border-black outline-0"
+										className="w-full px-4 py-2 border-2 border-black outline-0 font-jockey text-[20px]"
 										type="text"
 										placeholder="Enter team member 1 regno"
 									/>
 									<input
 										onChange={(e) => setRegno2(e.target.value)}
-										className="w-full px-4 py-2 border-2 border-black outline-0"
+										className="w-full px-4 py-2 border-2 border-black outline-0 font-jockey text-[20px]"
 										type="text"
 										placeholder="Enter team member 2 regno"
 									/>
 									<input
 										onChange={(e) => setPhone(e.target.value)}
-										className="w-full px-4 py-2 border-2 border-black outline-0"
+										className="w-full px-4 py-2 border-2 border-black outline-0 font-jockey text-[20px]"
 										type="text"
 										placeholder="Enter your phone"
 									/>
@@ -176,28 +186,28 @@ const Register = () => {
 							)}
 							<input
 								onChange={(e) => setEmail(e.target.value)}
-								className="w-full px-4 py-2 border-2 border-black outline-0"
+								className="w-full px-4 py-2 border-2 border-black outline-0 font-jockey text-[20px]"
 								type="text"
 								placeholder="Enter your email"
 							/>
 							<input
 								onChange={(e) => setPassword(e.target.value)}
-								className="w-full px-4 py-2 border-2 border-black outline-0"
+								className="w-full px-4 py-2 border-2 border-black outline-0 font-jockey text-[20px]"
 								type="password"
 								placeholder="Enter your password"
 							/>
 							<button
 								onClick={handleRegister}
-								className="w-full px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black"
+								className="w-full px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black font-jockey text-[25px]"
 							>
 								Register
 							</button>
 							{error && (
-								<h3 className="text-red-500 text-sm ">Something went wrong</h3>
+								<h3 className="text-red-500 text-sm font-jockey text-[20px]">Something went wrong</h3>
 							)}
-							<div className="flex justify-center items-center space-x-3">
+							<div className="flex justify-center items-center space-x-3 font-jockey text-[20px]">
 								<p>Already have an account?</p>
-								<p className="text-gray-500 hover:text-black">
+								<p className="text-gray-500 hover:text-black font-jockey text-[20px]">
 									<Link to="/login">Login</Link>
 								</p>
 							</div>
@@ -205,6 +215,10 @@ const Register = () => {
 					</div>
 				</>
 			)}
+
+			<br/>
+			<br/>
+			<br/>
 
 			<Footer />
 		</>

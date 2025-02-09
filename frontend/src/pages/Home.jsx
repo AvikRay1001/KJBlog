@@ -167,7 +167,7 @@ const Home = () => {
 							UPDATES
 						</p>
 						<div className="flex flex-col gap-4 font-poppins text-sm">
-							<div className="flex justify-between items-center">
+							{/* <div className="flex justify-between items-center">
 								<p className="text-white font-medium">- Event has ended</p>
 							</div>
 							<div className="flex justify-between items-center">
@@ -177,8 +177,8 @@ const Home = () => {
 								<p className="text-white font-medium">- Posts made after 12:35 AM will not be considered for evaluation</p>
 							</div>
 							<div className="flex justify-between items-center">
-								<p className="text-white font-medium">- Results will be announced soon after evaluation</p>
-							</div>
+								<p classNa	me="text-white font-medium">- Results will be announced soon after evaluation</p>
+							</div> */}
 						</div>
 					</div>
 					{/* Categories Description  */}
@@ -187,7 +187,7 @@ const Home = () => {
 							Know the Categories
 						</p>
 						<div className="flex flex-col gap-4 font-poppins">
-							<Link to="/category/historical">
+							{/* <Link to="/category/historical">
 								<div className="flex justify-center items-center relative bg-black/50 hover:bg-gradient-to-b hover:from-transparent hover:to-slate-950/50 rounded-lg h-30 shadow-md shadow-neutral-400">
 									<img
 										src="/history.jpeg"
@@ -214,7 +214,7 @@ const Home = () => {
 										</p>
 									</div>
 								</div>
-							</Link>
+							</Link> */}
 							<Link to="/category/open">
 								<div className="flex justify-center items-center relative bg-black/50 hover:bg-gradient-to-b hover:from-transparent hover:to-slate-950/50 rounded-lg h-30 transition-300 shadow-md shadow-neutral-400">
 									<img
