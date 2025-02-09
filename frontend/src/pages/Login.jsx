@@ -28,29 +28,55 @@ const Login = () => {
 	}
 	
 
+	// const handleLogin = async () => {
+	// 	try {
+	// 		const res = await axios.post(
+	// 			"https://kjblog-production.up.railway.app/api/auth/login",
+	// 			{ username, password }, // send plain text password
+	// 			{ withCredentials: true }
+	// 		);
+	// 		console.log("res:",res);
+	// 		console.log("Server response:", res.data); // Log the entire response
+	// 		const token = getCookie("token"); // Get the token from the cookie
+	// 		console.log("Token:-",token);
+	// 		localStorage.setItem("token", token); // Store the token in local storage
+	// 		console.log("Token at login: ", token);
+	// 		setUser(res.data);
+	// 		setError(false);
+	// 		navigate("/");
+	// 		toast.success("Welcome back " + res.data.username + " !");
+	// 	} catch (err) {
+	// 		setError(true);
+	// 		console.log(err);
+	// 	}
+	// };
+
 	const handleLogin = async () => {
 		try {
 			const res = await axios.post(
 				"https://kjblog-production.up.railway.app/api/auth/login",
-				{ username, password }, // send plain text password
+				{ username, password },
 				{ withCredentials: true }
 			);
-			console.log("res:",res);
-			console.log("Cookie:",document.cookie);
+	
 			console.log("Server response:", res.data); // Log the entire response
-			const token = getCookie("token"); // Get the token from the cookie
-			console.log("Token:-",token);
+	
+			const token = res.data.token; // Get the token directly from the response
+			console.log("Token:", token);
+	
 			localStorage.setItem("token", token); // Store the token in local storage
-			console.log("Token at login: ", token);
-			setUser(res.data);
+			console.log("Token at login:", token);
+	
+			setUser(res.data.user); // Update state with user info
 			setError(false);
 			navigate("/");
-			toast.success("Welcome back " + res.data.username + " !");
+			toast.success("Welcome back " + res.data.user.username + "!");
 		} catch (err) {
 			setError(true);
-			console.log(err);
+			console.error("Login error:", err.response?.data || err.message);
 		}
 	};
+	
 
 	const checkAdminPassword = () => {
 		const adminPass = "kjadmin007";
