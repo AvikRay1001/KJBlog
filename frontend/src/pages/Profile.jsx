@@ -27,7 +27,7 @@ const Profile = () => {
 	const fetchUserPosts = async () => {
 		try {
 			const res = await axios.get(
-				"https://kjblog-production.up.railway.app:5000/api/posts/user/" + user._id
+				"https://kjblog-production.up.railway.app/api/posts/user/" + user._id
 			);
 			// console.log(res.data)
 			setPosts(res.data);

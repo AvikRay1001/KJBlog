@@ -31,7 +31,7 @@ const CreatePost = () => {
 		const fetchUserPosts = async () => {
 			try {
 				const res = await axios.get(
-					"https://kjblog-production.up.railway.app:5000/api/posts/user/" + user._id
+					"https://kjblog-production.up.railway.app/api/posts/user/" + user._id
 				);
 				if (res.data.length > 0) {
 					setHasPosted(true);
@@ -279,7 +279,7 @@ const CreatePost = () => {
 
 		try {
 			const res = await axios.post(
-				"https://kjblog-production.up.railway.app:5000/api/posts/create",
+				"https://kjblog-production.up.railway.app/api/posts/create",
 				post,
 				{
 					headers: { Authorization: `Bearer ${token}` }, // Include the token in the request headers
