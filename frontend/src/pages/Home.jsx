@@ -21,10 +21,22 @@ const Home = () => {
 		seconds: 0,
 	});
 
+
+	const getCookie = (name) => {
+		const cookies = document.cookie.split("; ");
+		for (const cookie of cookies) {
+			const [cookieName, cookieValue] = cookie.split("=");
+			if (cookieName === name) {
+				return cookieValue;
+			}
+		}
+		return null;
+	};
+
 	const fetchPosts = async () => {
 		setLoader(true);
 		try {
-			const token = localStorage.getItem("token");
+			const token = getCookie("token");
 			const res = await axios.get(
 				"https://kjblog-production.up.railway.app/api/posts/" + search,
 				{
