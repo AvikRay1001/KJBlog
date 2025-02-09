@@ -114,12 +114,12 @@ const PostDetails = () => {
 				<>
 					<div className="h-screen w-screen bg-black fixed z-[-2]"></div>
 					<img
-						src="/BG.jpeg"
+						src="/pattern.webp"
 						alt=""
 						className="h-screen w-1/2 objec fixed z-[-1] opacity-80"
 					/>
 					<img
-						src="/BG.jpeg"
+						src="/pattern.webp"
 						alt=""
 						className="h-screen w-1/2 fixed z-[-1] right-0 opacity-80"
 					/>
