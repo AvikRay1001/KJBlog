@@ -38,7 +38,7 @@ dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 app.use(
-	cors({ origin: "http://localhost:5173", credentials: true })
+	cors({ origin: "https://kj-blog.vercel.app/", credentials: true })
 );
 app.use(cookieParser());
 app.use("/api/auth", authRoute);
