@@ -18,15 +18,15 @@ const Login = () => {
 
 	function getCookie(name) {
 		const cookies = document.cookie.split("; ");
-	
 		for (let cookie of cookies) {
 			const [cookieName, cookieValue] = cookie.split("=");
-			if (cookieName === name) {
+			if (cookieName === decodeURIComponent(name)) {
 				return decodeURIComponent(cookieValue);
 			}
 		}
 		return null; // Return null if cookie not found
 	}
+	
 
 	const handleLogin = async () => {
 		try {
@@ -36,9 +36,10 @@ const Login = () => {
 				{ withCredentials: true }
 			);
 			console.log("res:",res);
+			console.log("Cookie:",document.cookie);
 			console.log("Server response:", res.data); // Log the entire response
 			const token = getCookie("token"); // Get the token from the cookie
-			console.log("Token:-",token)
+			console.log("Token:-",token);
 			localStorage.setItem("token", token); // Store the token in local storage
 			console.log("Token at login: ", token);
 			setUser(res.data);
