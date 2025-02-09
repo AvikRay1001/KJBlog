@@ -16,6 +16,17 @@ const Login = () => {
 	const [adminPassword, setAdminPassword] = useState("");
 
 
+	const getCookie = (name) => {
+		const cookies = document.cookie.split("; ");
+		for (const cookie of cookies) {
+			const [cookieName, cookieValue] = cookie.split("=");
+			if (cookieName === name) {
+				return cookieValue;
+			}
+		}
+		return null;
+	};
+
 	const handleLogin = async () => {
 		try {
 			const res = await axios.post(
@@ -25,8 +36,8 @@ const Login = () => {
 			);
 			console.log("res:",res);
 			console.log("Server response:", res.data); // Log the entire response
-			localStorage.setItem("token", res.data.token); // Store the token in local storage
-			console.log("Token at login: ", res.data.token);
+			localStorage.setItem("token", getCookie("token")); // Store the token in local storage
+			console.log("Token at login: ", getCookie("token"));
 			setUser(res.data);
 			setError(false);
 			navigate("/");
