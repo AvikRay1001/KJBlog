@@ -62,7 +62,7 @@ const Register = () => {
 
 	return (
 		<>
-			{!isAdmin ? (
+			{isAdmin ? (
 				<div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
 					<p className="text-lg text-center text-gray-700 mb-2">
 						You are not allowed to access this page
