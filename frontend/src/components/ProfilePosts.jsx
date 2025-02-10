@@ -24,7 +24,7 @@ const ProfilePosts = ({ p }) => {
 					<p className="text-cyan-600 text-xs font-semibold ">#CULTURAL</p>
 				)}
 				{p?.category === "Open" && (
-					<p className="text-lime-600 text-xs font-semibold ">#OPENCATEGORY</p>
+					<p className="text-lime-600 text-xs font-semibold ">#c</p>
 				)}
 				<div className="flex mb-2 text-sm font-semibold text-gray-500 items-center justify-between md:mb-4">
 					<p>@{p.username}</p>

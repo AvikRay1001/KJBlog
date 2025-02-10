@@ -23,7 +23,7 @@ const HomePosts = ({ post }) => {
 					<p className="text-cyan-600 text-xs font-semibold ">#CULTURAL</p>
 				)}
 				{post?.category === "Open" && (
-					<p className="text-lime-600 text-xs font-semibold ">#OPENCATEGORY</p>
+					<p className="text-lime-600 text-xs font-semibold ">#CULTURAL_EXCHANGE</p>
 				)}
 				<div className="flex mb-2 text-sm font-semibold text-neutral-300 items-center justify-between md:mb-4">
 					<p>@{post.username}</p>
