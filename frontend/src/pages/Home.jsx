@@ -224,7 +224,7 @@ const Home = () => {
 									/>
 									<div className="h-full w-full absolute flex justify-center items-center bg-black/40 hover:bg-black/50 rounded-lg h-30 transition-300">
 										<p className="text-transparent bg-clip-text bg-gradient-to-br from-lime-400 to-green-500 text-2xl font-bold drop-shadow-2xl text-center font-jockey text-[20px]">
-											Cultural Exchange in the Digital Age: Opportunities and Challenges
+											Cultural Exchange in the Digital Age: <br/>Opportunities and Challenges
 										</p>
 									</div>
 								</div>
