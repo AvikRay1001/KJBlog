@@ -25,12 +25,12 @@ const categories = [
 	},
 	{
 		"category": "open",
-		"title": "Open Category",
-		"image": "/open1.jpg",
-		"description": "The 'Open Category' is a broad canvas for your creativity and intellect. It's a space where you can explore any topic, idea, or concept that sparks your interest. From personal anecdotes and thought-provoking opinions to educational content and creative writing, the possibilities are endless. This category encourages you to step outside the confines of specific themes and delve into the depths of your imagination and knowledge.",
-		"image2": "/open2.jpg",
-		"description2": "In the 'Open Category', you can write about your unique experiences, share your perspective on current events, or educate readers about a subject you're passionate about. You can also showcase your creativity through short stories, poems, or scripts. The 'Open Category' is all about freedom in writing, so don't hesitate to express your thoughts, share your ideas, and engage your readers in meaningful conversations."
-	},	
+		"title": "Cultural Exchange in the Digital Age: Opportunities and Challenges",
+		"image": "/cultural1.jpg",
+		"description": "The 'Cultural Exchange in the Digital Age' category explores how technology has transformed the way cultures interact and influence each other. It delves into the opportunities presented by digital platforms for cross-cultural communication, learning, and collaboration. From language exchange and virtual tourism to global artistic collaborations and international friendships, this category highlights the ways in which the digital world fosters cultural understanding and appreciation.",
+		"image2": "/topicImg.webp",
+		"description2": "In the 'Cultural Exchange in the Digital Age' category, you can discuss the benefits and challenges of cultural interactions facilitated by the internet. Explore topics such as the role of social media in shaping cultural perceptions, the impact of streaming services on global entertainment, or the ethical concerns surrounding digital appropriation. Whether analyzing trends, sharing personal experiences, or offering insights into the evolving landscape of digital cultural exchange, this category invites you to engage in thoughtful discussions on the interconnected world of today."
+	}		
 ];
 
 const Category = () => {

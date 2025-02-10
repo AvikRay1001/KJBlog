@@ -61,7 +61,7 @@ const MyBlogs = () => {
 						</>
 					))
 				) : (
-					<h3 className="text-center font-bold mt-16">No posts available</h3>
+					<h3 className="text-center font-bold mt-16 font-jockey text-[30px]">No posts available</h3>
 				)}
 			</div>
 			<div className="w-screen h-screen bg-black fixed top-0 left-0 z-[-1] opacity-20"></div>

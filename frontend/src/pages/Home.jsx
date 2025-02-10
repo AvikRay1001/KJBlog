@@ -120,7 +120,7 @@ const Home = () => {
 							</Link>
 						))
 					) : (
-						<h3 className="text-center font-bold mt-16">No posts available</h3>
+						<h3 className="text-center font-bold mt-16 font-jockey text-[30px]">No posts available</h3>
 					)}
 				</div>
 				{/* Updates */}
@@ -218,13 +218,13 @@ const Home = () => {
 							<Link to="/category/open">
 								<div className="flex justify-center items-center relative bg-black/50 hover:bg-gradient-to-b hover:from-transparent hover:to-slate-950/50 rounded-lg h-30 transition-300 shadow-md shadow-neutral-400">
 									<img
-										src="/open.jpg"
+										src="/topicImg.webp"
 										alt=""
 										className="rounded-lg h-28 w-full object-cover"
 									/>
 									<div className="h-full w-full absolute flex justify-center items-center bg-black/40 hover:bg-black/50 rounded-lg h-30 transition-300">
-										<p className="text-transparent bg-clip-text bg-gradient-to-br from-lime-400 to-green-500 text-2xl font-bold drop-shadow-2xl text-center">
-											OPEN CATEGORY
+										<p className="text-transparent bg-clip-text bg-gradient-to-br from-lime-400 to-green-500 text-2xl font-bold drop-shadow-2xl text-center font-jockey text-[20px]">
+											Cultural Exchange in the Digital Age: Opportunities and Challenges
 										</p>
 									</div>
 								</div>
