@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from "react
  const Footer = () => {
 	return (
 		<>
-			<div className="mt-8 w-full backdrop-blur-xl text-black px-8 flex md:flex-row flex-col space-y-6 md:space-y-0 items-start md:justify-between text-sm pt-2 pb-1">
+			<div className="mt-8 w-full backdrop-blur-xl text-white px-8 flex md:flex-row flex-col space-y-6 md:space-y-0 items-start md:justify-between text-sm pt-2 pb-1">
 				<div className="">
 					<p className="font-jockey text-[20px]">Student Coordinators:</p>
 					<br/>

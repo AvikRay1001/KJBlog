@@ -183,8 +183,8 @@ const Home = () => {
 					</div>
 					{/* Categories Description  */}
 					<div className="mt-8 p-3 rounded-lg bg-white/10 shadow-2xl ring-2 ring-black/5 backdrop-blur-3xl">
-						<p className="text-white text-center font-semibold text-xl pb-2 shadow-2xl">
-							Know the Categories
+						<p className="text-white text-center font-semibold text-xl pb-2 shadow-2xl font-jockey text-[20px]">
+							Topic
 						</p>
 						<div className="flex flex-col gap-4 font-poppins">
 							{/* <Link to="/category/historical">
