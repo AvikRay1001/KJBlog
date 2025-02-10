@@ -386,8 +386,8 @@ const CreatePost = () => {
 											: "text-white"
 									}`}
 								>
-									<p className=" text-xl font-semibold">OPEN</p>
-									<p className=" text-xl font-semibold">CATEGORY</p>
+									<p className=" text-xl font-semibold">CULTURAL</p>
+									<p className=" text-xl font-semibold">EXCHANGE</p>
 								</div>
 							</div>
 						</div>

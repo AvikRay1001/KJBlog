@@ -139,7 +139,7 @@ const PostDetails = () => {
 								)}
 								{post?.category === "Open" && (
 									<p className="text-lime-600 text-sm font-semibold ">
-										#OPENCATEGORY
+										#CULTURAL_EXCHANGE
 									</p>
 								)}
 							</h1>
